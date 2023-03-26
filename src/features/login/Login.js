@@ -1,31 +1,45 @@
-import React, { useState } from "react";
+import axios from "axios";
+import { paths } from "paths";
+import { useNavigate } from "react-router";
 
 function Login() {
-    const [username, setUsername] = useState("");
-    const [password, setPassword] = useState("");
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        console.log(`Submitting form with ${username} and ${password}`);
+    const navigate = useNavigate();
+
+    const handleSubmit = (e) => {
+
+        e.preventDefault();
+
+        const {
+            elements: { email, password },
+        } = e.target
+        console.log(email, password);
+        axios.post('/users/login', {
+            email: email.value,
+            password: password.value,
+        }).then(res => {
+            navigate(paths.main);
+            console.log(res.data);
+            localStorage.setItem('jwt', res.data.token)
+        }).catch((er) => {
+            const { data } = er.response
+            console.log(data);
+        })
     };
 
     return (
         <form onSubmit={handleSubmit}>
-            <label htmlFor="username">Username:</label>
+            <label>Email:</label>
             <input
                 type="text"
-                id="username"
-                value={username}
-                onChange={(event) => setUsername(event.target.value)}
+                id="email"
                 required
             />
 
-            <label htmlFor="password">Password:</label>
+            <label>Password:</label>
             <input
                 type="password"
                 id="password"
-                value={password}
-                onChange={(event) => setPassword(event.target.value)}
                 required
             />
 

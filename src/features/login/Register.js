@@ -1,42 +1,51 @@
-import { useState } from "react";
+import axios from "axios";
 
 export const Register = () => {
 
-    const [username, setUsername] = useState("");
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
+    const handleSubmit = (e) => {
+        e.preventDefault();
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        console.log(`Submitting form with ${username}, ${email}, and ${password}`);
+        const {
+            elements: { email, password, name },
+        } = e.target
+        console.log(email, password, name);
+        axios.post('/users/signup', {
+            name: name.value,
+            email: email.value,
+            password: password.value,
+        }).then(res => {
+            alert(res.data.user.name)
+            console.log(res.data);
+            localStorage.setItem('jwt', res.data.token)
+        }).catch((er) => {
+            const { data } = er.response
+            console.log(data);
+        })
     };
 
     return (
         <form onSubmit={handleSubmit}>
-            <label htmlFor="username">Username:</label>
+            <label>Name:</label>
             <input
+                placeholder="type your name"
                 type="text"
-                id="username"
-                value={username}
-                onChange={(event) => setUsername(event.target.value)}
+                id="name"
                 required
             />
 
-            <label htmlFor="email">Email:</label>
+            <label>Email:</label>
             <input
+                placeholder="type your email"
                 type="email"
                 id="email"
-                value={email}
-                onChange={(event) => setEmail(event.target.value)}
                 required
             />
 
-            <label htmlFor="password">Password:</label>
+            <label>Password:</label>
             <input
+                placeholder="create your password"
                 type="password"
                 id="password"
-                value={password}
-                onChange={(event) => setPassword(event.target.value)}
                 required
             />
 
