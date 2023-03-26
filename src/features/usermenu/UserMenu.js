@@ -1,11 +1,15 @@
-// UserMenu
+import useUser from "../hooks/UseUser";
 
 export const UserMenu = () => {
-
+    const { isAuth } = useUser();
     return (
         <div>
-            <p>mango@mail.com</p>
-            <button>Logout</button>
+            {isAuth &&
+                <div>
+                    <p>mango@mail.com</p>
+                    <button>Logout</button>
+                </div>
+            }
         </div>
     )
 }

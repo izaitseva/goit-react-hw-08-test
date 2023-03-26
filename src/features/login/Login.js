@@ -42,7 +42,6 @@ function Login() {
                 id="password"
                 required
             />
-
             <button type="submit">Log in</button>
         </form>
     );

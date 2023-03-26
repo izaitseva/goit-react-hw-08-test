@@ -1,6 +1,6 @@
 export const paths = {
     main: '/',
-    // contacts: 'contacts',
+    contacts: '/contacts',
     login: '/login',
     register: '/register'
 }
