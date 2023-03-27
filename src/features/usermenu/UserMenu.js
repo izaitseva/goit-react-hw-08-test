@@ -36,7 +36,7 @@ export const UserMenu = () => {
         <div>
             {isAuth &&
                 <div className={styles.user_menu}>
-                    <NavLink className={styles.link} activeClassName={styles.activeLink} to={paths.main}>Contacts</NavLink>
+                    <NavLink className={styles.link} activeclassname={styles.activeLink} to={paths.main}>Contacts</NavLink>
                     <button className={styles.logout_btn} onClick={handlerLogOut}>Logout</button>
                 </div>
             }

@@ -1,9 +1,6 @@
 .user_menu {
-    position: absolute;
     display: flex;
     align-items: center;
-    top: 30px;
-    right: 30px;
     justify-content: space-between;
 }
 
@@ -11,8 +8,9 @@
     text-decoration: none;
     display: block;
     font-size: 50px;
+    padding-right: 15px;
     color: rgb(48, 48, 48);
-    padding: 1.5rem;
+    line-height: 80px;
     border-right: 1px solid blueviolet;
 }
 
@@ -26,7 +24,6 @@
 }
 
 .logout_btn {
-    margin: auto;
     color: white;
     background-color: blueviolet;
     width: 200px;

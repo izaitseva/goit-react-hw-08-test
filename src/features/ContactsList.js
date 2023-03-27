@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
-import { BsPersonDashFill } from "react-icons/bs";
+import { FaUserMinus } from "react-icons/fa";
 import "./ContactList.css";
 import { deleteContact } from "store/contactsAPI";
 
@@ -32,7 +32,7 @@ const ContactsList = () => {
                                     </div>
                                 </div>
                                 <button className="delete-btn" onClick={() => onDeleteContacts(contact.id)}>
-                                    <BsPersonDashFill />
+                                    <FaUserMinus />
                                 </button>
                             </li>
                         ))}

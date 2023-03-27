@@ -1,8 +1,8 @@
-import { BsPersonFillAdd } from "react-icons/bs";
+import { FaUserPlus } from "react-icons/fa";
 import { useState } from "react";
 import { addContact } from "store/contactsAPI";
 import { useDispatch, useSelector } from "react-redux";
-import "./CreateContacts.css";
+import styles from "./CreateContacts.module.css";
 
 const CreateContacts = () => {
 
@@ -35,8 +35,8 @@ const CreateContacts = () => {
 
     return (
         <div>
-            <div className="input-group">
-                <input className="input"
+            <div className={styles.input_group}>
+                <input className={styles.input}
                     placeholder="Enter the contact name"
                     type="text"
                     name="name"
@@ -46,7 +46,7 @@ const CreateContacts = () => {
                     title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
                     required
                 />
-                <input className="input"
+                <input className={styles.input}
                     placeholder="Enter the contact phone"
                     type="tel"
                     name="number"
@@ -56,8 +56,8 @@ const CreateContacts = () => {
                     title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
                     required
                 />
-                <button className="add-btn" onClick={onAddContact} type="submit">
-                    <BsPersonFillAdd />
+                <button className={styles.add_btn} onClick={onAddContact} type="submit">
+                    <FaUserPlus />
                 </button>
             </div>
         </div >

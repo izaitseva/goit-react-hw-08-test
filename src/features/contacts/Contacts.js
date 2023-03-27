@@ -22,7 +22,6 @@ export const Contacts = () => {
         <div className="container">
             {isAuth &&
                 <>
-                    <h1>Phonebook</h1>
                     <CreateContacts />
                     <div>
                         {contacts.length === 0

@@ -20,8 +20,7 @@ export const Register = () => {
             password: password.value,
         }).then(res => {
             navigate(paths.login);
-            alert(res.data.user.name)
-            console.log(res.data);
+            // alert(res.data.user.name)
             localStorage.setItem('jwt', res.data.token)
         }).catch((er) => {
             const { data } = er.response
