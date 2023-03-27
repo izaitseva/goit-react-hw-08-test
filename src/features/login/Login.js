@@ -2,6 +2,7 @@ import axios from "axios";
 import useUser from "features/hooks/UseUser";
 import { paths } from "paths";
 import { useNavigate } from "react-router";
+import styles from "./Login.module.css";
 
 function Login() {
 
@@ -35,9 +36,10 @@ function Login() {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form className={styles.input_group} onSubmit={handleSubmit}>
             <label>Email:</label>
             <input
+            className={styles.input} 
                 type="text"
                 id="email"
                 required
@@ -45,11 +47,12 @@ function Login() {
 
             <label>Password:</label>
             <input
+            className={styles.input} 
                 type="password"
                 id="password"
                 required
             />
-            <button type="submit">Log in</button>
+            <button className={styles.login_btn} type="submit">Log in</button>
         </form>
     );
 }

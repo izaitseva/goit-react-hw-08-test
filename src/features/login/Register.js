@@ -1,6 +1,7 @@
 import axios from "axios";
 import { paths } from "paths";
 import { useNavigate } from "react-router";
+import styles from "./Register.module.css";
 
 export const Register = () => {
 
@@ -29,32 +30,35 @@ export const Register = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <label>Name:</label>
+        <form className={styles.input_group} onSubmit={handleSubmit}>
+            <label className={styles.form_text}>Name:</label>
             <input
+                className={styles.input}
                 placeholder="type your name"
                 type="text"
                 id="name"
                 required
             />
 
-            <label>Email:</label>
+            <label className={styles.form_text}>Email:</label>
             <input
+                className={styles.input}
                 placeholder="type your email"
                 type="email"
                 id="email"
                 required
             />
 
-            <label>Password:</label>
+            <label className={styles.form_text}>Password:</label>
             <input
+                className={styles.input}
                 placeholder="create your password"
                 type="password"
                 id="password"
                 required
             />
 
-            <button type="submit">Register</button>
+            <button className={styles.register_btn} type="submit">Register</button>
         </form>
     )
 

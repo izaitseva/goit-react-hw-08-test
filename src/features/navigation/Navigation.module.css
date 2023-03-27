@@ -1,0 +1,38 @@
+.list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    border-radius: 5px;
+    font-size: 100px;
+}
+
+.list_item {
+    padding: 2rem;
+    border-right: 4px solid blueviolet;
+    align-items: center;
+}
+
+.list_item:hover,
+.list_item:focus {
+    background-color: rgb(238, 236, 236);
+    color: blueviolet;
+}
+
+.list_item:last-child {
+    border-right: none;
+}
+
+.link {
+    text-decoration: none;
+    color: rgb(48, 48, 48);
+}
+
+.link:hover,
+.link:focus {
+    color: blueviolet;
+}
+
+.activeLink {
+    color: blueviolet;
+}

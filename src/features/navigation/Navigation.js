@@ -1,7 +1,7 @@
-
+import styles from "./Navigation.module.css"
 import { UserMenu } from "features/usermenu/UserMenu"
 import { paths } from "paths"
-import { Link } from "react-router-dom"
+import { NavLink } from "react-router-dom"
 import useUser from "../hooks/UseUser";
 
 export const Navigation = () => {
@@ -9,27 +9,27 @@ export const Navigation = () => {
 
     return (
         <header>
-            <ul>
-                {isAuth &&
-                    <>
-                        <li>
-                            <Link to={paths.main}>Contacts</Link>
-                        </li>
-                    </>
-                }
+            <ul className={styles.list}>
 
                 {!isAuth &&
                     <>
-                        <li>
-                            <Link to={paths.login}>Login</Link>
+                        <li className={styles.list_item}>
+                            <NavLink className={styles.link} activeclassname={styles.activeLink} to={paths.main}>Contacts</NavLink>
                         </li>
-                        <li>
-                            <Link to={paths.register}>Register</Link>
+                        <li className={styles.list_item}>
+                            <NavLink className={styles.link} activeclassname={styles.activeLink} to={paths.login}>
+                                <span>Login</span>
+                            </NavLink>
+                        </li>
+                        <li className={styles.list_item}>
+                            <NavLink className={styles.link} activeclassname={styles.activeLink} to={paths.register}>
+                                <span>Register</span>
+                            </NavLink>
                         </li>
                     </>
                 }
+                <UserMenu/>
             </ul>
-            <UserMenu />
         </header>
     )
 }

@@ -1,5 +1,9 @@
 import axios from "axios";
+import { paths } from "paths";
+import { NavLink } from "react-router-dom";
 import useUser from "../hooks/UseUser";
+
+import styles from "./UserMenu.module.css"
 
 export const UserMenu = () => {
 
@@ -31,9 +35,9 @@ export const UserMenu = () => {
     return (
         <div>
             {isAuth &&
-                <div>
-                    <p>mango@mail.com</p>
-                    <button onClick={handlerLogOut}>Logout</button>
+                <div className={styles.user_menu}>
+                    <NavLink className={styles.link} activeClassName={styles.activeLink} to={paths.main}>Contacts</NavLink>
+                    <button className={styles.logout_btn} onClick={handlerLogOut}>Logout</button>
                 </div>
             }
         </div>
