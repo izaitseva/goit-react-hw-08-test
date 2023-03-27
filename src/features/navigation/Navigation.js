@@ -10,9 +10,13 @@ export const Navigation = () => {
     return (
         <header>
             <ul>
-                <li>
-                    <Link to={paths.main}>Contacts</Link>
-                </li>
+                {isAuth &&
+                    <>
+                        <li>
+                            <Link to={paths.main}>Contacts</Link>
+                        </li>
+                    </>
+                }
 
                 {!isAuth &&
                     <>

@@ -1,4 +1,3 @@
-import { nanoid } from "@reduxjs/toolkit";
 import { BsPersonFillAdd } from "react-icons/bs";
 import { useState } from "react";
 import { addContact } from "store/contactsAPI";
@@ -26,7 +25,7 @@ const CreateContacts = () => {
             if (contacts.some(el => el.name.toLowerCase() === newContactName.toLowerCase())) {
                 alert(`${newContactName} is already in contacts`)
             } else {
-                const newContact = { id: nanoid(), name: newContactName, phone: newContactNumb }
+                const newContact = { name: newContactName, number: newContactNumb }
                 dispatch(addContact(newContact));
                 setNewContactName('');
                 setNewContactNumb('');
@@ -48,7 +47,7 @@ const CreateContacts = () => {
                     required
                 />
                 <input className="input"
-                    placeholder="Enter the contact phone'"
+                    placeholder="Enter the contact phone"
                     type="tel"
                     name="number"
                     value={newContactNumb}

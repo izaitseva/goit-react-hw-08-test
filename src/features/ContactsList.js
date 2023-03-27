@@ -28,7 +28,7 @@ const ContactsList = () => {
                                     </div>
                                     <div className="contact-info_number">
                                         <small className="contact-info_label">Number:</small>
-                                        <span>{contact.phone}</span>
+                                        <span>{contact.number}</span>
                                     </div>
                                 </div>
                                 <button className="delete-btn" onClick={() => onDeleteContacts(contact.id)}>

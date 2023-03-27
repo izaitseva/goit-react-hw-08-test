@@ -1,6 +1,10 @@
 import axios from "axios";
+import { paths } from "paths";
+import { useNavigate } from "react-router";
 
 export const Register = () => {
+
+    const navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -14,6 +18,7 @@ export const Register = () => {
             email: email.value,
             password: password.value,
         }).then(res => {
+            navigate(paths.login);
             alert(res.data.user.name)
             console.log(res.data);
             localStorage.setItem('jwt', res.data.token)

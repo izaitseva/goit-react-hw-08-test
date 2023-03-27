@@ -1,0 +1,29 @@
+.gohome_btn {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    top: 620px;
+    left: 269px;
+    background-color: blueviolet;
+    width: 200px;
+    height: 50px;
+    position: absolute;
+    border-radius: 20px;
+}
+
+.gohome_btn:hover {
+    border: 2px solid blueviolet;
+    background-color: rgb(167, 108, 221);
+}
+
+.gohome_text {
+    text-transform: uppercase;
+    font-size: large;
+}
+.notFound_pic {
+    position: relative;
+    height: 100%;
+    /* position: absolute; */
+}

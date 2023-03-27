@@ -7,7 +7,6 @@ export const Main = () => {
     return (
         <div>
             <Navigation />
-            {/* <Contacts /> */}
             <Outlet />
         </div>
     )

@@ -1,11 +1,19 @@
 import ContactsList from "features/ContactsList";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import CreateContacts from "./CreateContacts";
 import { FilterContacts } from "./FilterContacts";
 import useUser from "../hooks/UseUser";
 import "./Contacts.css";
+import { useEffect } from "react";
+import fetchContacts from "store/contactsAPI";
 
 export const Contacts = () => {
+
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(fetchContacts())
+    }, [dispatch])
 
     const contacts = useSelector((state => state.contacts.contacts));
     const { isAuth } = useUser();
